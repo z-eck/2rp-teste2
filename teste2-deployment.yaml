@@ -12,12 +12,7 @@ spec:
       spec:
         containers:
           - name: teste2-container
-            image: zeckdevops/teste2:1
-            #ports:
-            #  - containerPort: 80
-            #envFrom:
-            # - configMapRef:
-            #   name: teste2-secret
+            image: zeckdevops/teste2:1.1
             env:
               - name: TWORPTEST
                 valueFrom:

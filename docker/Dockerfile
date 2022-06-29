@@ -1,0 +1,6 @@
+FROM debian:latest
+WORKDIR /app
+#ARG TWORPTEST="true100%"
+#ENV TWORPTEST=$TWORPTEST
+COPY . .
+ENTRYPOINT ./sript.sh
