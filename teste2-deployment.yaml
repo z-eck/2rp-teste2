@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teste2-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: teste2-pod
+      labels:
+        app: teste2-pod
+      spec:
+        containers:
+          - name: teste2-container
+            image: zeckdevops/teste2:1
+            #ports:
+            #  - containerPort: 80
+            #envFrom:
+            # - configMapRef:
+            #   name: teste2-secret
+            env:
+              - name: TWORPTEST
+                valueFrom:
+                  secretKeyRef:
+                    name: teste2-secret
+                    key: TWORPTEST
+  selector:
+    matchLabels:
+      app: teste2-pod
+
+
+
+
+
+
+
+
+
+
+  
